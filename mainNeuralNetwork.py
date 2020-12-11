@@ -1,7 +1,7 @@
 from matplotlib import pyplot
 from mtcnn.mtcnn import MTCNN
 # load image from file
-filename = 'test.png'
+filename = 'test.jpg'
 pixels = pyplot.imread(filename)
 # create the detector, using default weights
 detector = MTCNN()
