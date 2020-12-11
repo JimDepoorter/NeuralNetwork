@@ -22,7 +22,17 @@ def draw_image_with_boxes(filename, result_list):
 	# show the plot
 	pyplot.show()
  
-filename = 'test.jpg'
+filename = 'test1.jpg'
+# load image from file
+pixels = pyplot.imread(filename)
+# create the detector, using default weights
+detector = MTCNN()
+# detect faces in the image
+faces = detector.detect_faces(pixels)
+# display faces on the original image
+draw_image_with_boxes(filename, faces)
+
+filename = 'test2.jpg'
 # load image from file
 pixels = pyplot.imread(filename)
 # create the detector, using default weights
