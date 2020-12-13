@@ -32,7 +32,6 @@ def draw_image_with_boxes(filename, result_list):
 
 camera = PiCamera();
 camera.resolution = (640, 480)
-camera.start_preview()
  
 filename = 'test3.jpg'
 # load image from file
