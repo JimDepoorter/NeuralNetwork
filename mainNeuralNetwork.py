@@ -28,6 +28,11 @@ def draw_image_with_boxes(filename, result_list):
 			ax.add_patch(dot)
 	# show the plot
 	pyplot.show()
+
+camera = PiCamera();
+camera.resolution = (640, 480)
+rawCapture = PiRGBArray(camera, size=(640, 480))
+camera.framerate = 30
  
 filename = 'test3.jpg'
 # load image from file
@@ -40,7 +45,7 @@ while True:
     print("start")
     start = int(round(time.time() * 1000))
     # detect faces in the image
-    faces = detector.detect_faces(pixels)
+    faces = detector.detect_faces(rawCapture)
     # print detect face time
     print(str(int(round(time.time() * 1000)) - start))
     # display faces on the original image
