@@ -3,6 +3,7 @@ from matplotlib import pyplot
 from matplotlib.patches import Rectangle
 from matplotlib.patches import Circle
 from mtcnn.mtcnn import MTCNN
+import time
  
 # draw an image with detected objects
 def draw_image_with_boxes(filename, result_list):
@@ -33,7 +34,11 @@ filename = 'test3.jpg'
 pixels = pyplot.imread(filename)
 # create the detector, using default weights
 detector = MTCNN()
+# start timer
+start = int(round(time.time() * 1000))
 # detect faces in the image
 faces = detector.detect_faces(pixels)
+# print detect face time
+print(str(int(round(time.time() * 1000)) - start)
 # display faces on the original image
 draw_image_with_boxes(filename, faces)
