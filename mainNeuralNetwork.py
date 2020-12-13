@@ -34,28 +34,14 @@ filename = 'test3.jpg'
 pixels = pyplot.imread(filename)
 # create the detector, using default weights
 detector = MTCNN()
-# start timer
-print("start")
-start = int(round(time.time() * 1000))
-# detect faces in the image
-faces = detector.detect_faces(pixels)
-# print detect face time
-print(str(int(round(time.time() * 1000)) - start))
-# display faces on the original image
-draw_image_with_boxes(filename, faces)
 
-
-filename = 'test1.jpg'
-# load image from file
-pixels = pyplot.imread(filename)
-# create the detector, using default weights
-detector = MTCNN()
-# start timer
-print("start")
-start = int(round(time.time() * 1000))
-# detect faces in the image
-faces = detector.detect_faces(pixels)
-# print detect face time
-print(str(int(round(time.time() * 1000)) - start))
-# display faces on the original image
-draw_image_with_boxes(filename, faces)
+while True:
+    # start timer
+    print("start")
+    start = int(round(time.time() * 1000))
+    # detect faces in the image
+    faces = detector.detect_faces(pixels)
+    # print detect face time
+    print(str(int(round(time.time() * 1000)) - start))
+    # display faces on the original image
+    draw_image_with_boxes(filename, faces)
