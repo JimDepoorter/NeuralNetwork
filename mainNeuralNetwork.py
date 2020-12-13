@@ -39,6 +39,6 @@ start = int(round(time.time() * 1000))
 # detect faces in the image
 faces = detector.detect_faces(pixels)
 # print detect face time
-print(str(int(round(time.time() * 1000)) - start)
+print(str(int(round(time.time() * 1000)) - start))
 # display faces on the original image
 draw_image_with_boxes(filename, faces)
