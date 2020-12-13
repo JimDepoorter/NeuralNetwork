@@ -4,6 +4,7 @@ from matplotlib.patches import Rectangle
 from matplotlib.patches import Circle
 from mtcnn.mtcnn import MTCNN
 import time
+from picamera import PiCamera
  
 # draw an image with detected objects
 def draw_image_with_boxes(filename, result_list):
@@ -31,8 +32,8 @@ def draw_image_with_boxes(filename, result_list):
 
 camera = PiCamera();
 camera.resolution = (640, 480)
-rawCapture = PiRGBArray(camera, size=(640, 480))
-camera.framerate = 30
+camera.start_preview()
+sleep(2)
  
 filename = 'test3.jpg'
 # load image from file
@@ -43,10 +44,16 @@ detector = MTCNN()
 while True:
     # start timer
     print("start")
+    # take snapshot
+    camera.capture('testjeluc.jpg')
+    # load image from file
+    pixels = pyplot.imread('testjeluc')
+    #start timer
+    print("start timer")
     start = int(round(time.time() * 1000))
     # detect faces in the image
     faces = detector.detect_faces(rawCapture)
     # print detect face time
     print(str(int(round(time.time() * 1000)) - start))
     # display faces on the original image
-    #draw_image_with_boxes(filename, faces)
+    draw_image_with_boxes(filename, faces)
