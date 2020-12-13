@@ -46,7 +46,7 @@ while True:
     # take snapshot
     camera.capture('testjeluc.jpg')
     # load image from file
-    pixels = pyplot.imread('testjeluc')
+    pixels = pyplot.imread('testjeluc.jpg')
     #start timer
     print("start timer")
     start = int(round(time.time() * 1000))
