@@ -33,7 +33,7 @@ def draw_image_with_boxes(filename, result_list):
 camera = PiCamera();
 camera.resolution = (640, 480)
  
-filename = 'test3.jpg'
+filename = 'testjeluc.jpg'
 # load image from file
 pixels = pyplot.imread(filename)
 # create the detector, using default weights
@@ -43,9 +43,9 @@ while True:
     # start timer
     print("start")
     # take snapshot
-    camera.capture('testjeluc.jpg')
+    camera.capture(filename)
     # load image from file
-    pixels = pyplot.imread('testjeluc.jpg')
+    pixels = pyplot.imread(filename)
     #start timer
     print("start timer")
     start = int(round(time.time() * 1000))
