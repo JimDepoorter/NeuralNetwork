@@ -44,4 +44,4 @@ while True:
     # print detect face time
     print(str(int(round(time.time() * 1000)) - start))
     # display faces on the original image
-    draw_image_with_boxes(filename, faces)
+    #draw_image_with_boxes(filename, faces)
