@@ -35,6 +35,7 @@ pixels = pyplot.imread(filename)
 # create the detector, using default weights
 detector = MTCNN()
 # start timer
+print("start")
 start = int(round(time.time() * 1000))
 # detect faces in the image
 faces = detector.detect_faces(pixels)
